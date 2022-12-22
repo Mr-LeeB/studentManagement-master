@@ -1,18 +1,17 @@
 const { Sequelize, DataTypes } = require("sequelize")
 const { HOST, USER, PASSWORD, DB, dialect } = require('../configs/db.configs');
-const createStudentModel = require("./student.model");
+const createProductModel = require("./product.model");
 
 const sequelize = new Sequelize(DB, USER, PASSWORD, {
     host: HOST,
     dialect: dialect,
 })
 
-const Student = createStudentModel(sequelize);
-
+const Product = createProductModel(sequelize);
 
 
 module.exports = {
-    sequelize, Student, 
+    sequelize, Product,
 }
 
 
