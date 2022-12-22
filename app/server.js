@@ -4,6 +4,9 @@ const router = require('./routers/root.router');
 const app = express();
 const port = process.env.PORT || 3000;
 
+
+
+
 // Chuyển tất cả các req, res sang dạng JSON
 app.use(express.json());
 
@@ -13,6 +16,10 @@ app.use('/static', express.static('./public'));
 app.use(router);
 
 app.use(cors());
+
+app.get('/products', (req, res) => {
+    // Xử lý yêu cầu GET tới /products
+  });
 
 app.get('/', (req, res) => {
     res.send('Hello World!');
