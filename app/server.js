@@ -1,7 +1,7 @@
 const express = require('express');
 const router = require('./routers/root.router');
 const app = express();
-const port = 7000;
+const port = process.env.PORT || 3000;
 
 // Chuyển tất cả các req, res sang dạng JSON
 app.use(express.json());
