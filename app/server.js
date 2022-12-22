@@ -7,6 +7,9 @@ const port = process.env.PORT || 3000;
 // Chuyển tất cả các req, res sang dạng JSON
 app.use(express.json());
 
+// serving static files
+app.use('/static', express.static('./public'));
+
 app.use(router);
 
 app.use(cors());
