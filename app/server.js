@@ -15,10 +15,14 @@ app.use('/static', express.static('./public'));
 
 app.use(router);
 
-app.use(cors());
+
+app.use(cors({
+    credentials: true
+  }));
 
 app.get('/products', (req, res) => {
     // Xử lý yêu cầu GET tới /products
+    
   });
 
 app.get('/', (req, res) => {
