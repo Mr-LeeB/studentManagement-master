@@ -6,7 +6,17 @@ const getProductList = async (req, res) => {
     if (!productList) {
         return res.status(404).send('Not found');
     }
-    res.status(200).send(productList);
+    const data = productList.map((product) => {
+        return {
+            id: product.id,
+            name: product.name,
+            image: product.image,
+            rating: product.rating,
+            sale: product.sale,
+            price: product.price,
+        }
+    })
+    res.status(200).send(data);
 };
 
 const getProductById = async (req, res) => {

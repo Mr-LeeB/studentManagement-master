@@ -29,7 +29,6 @@ app.use(cors({
 
 app.get('/products', (req, res) => {
     // Xử lý yêu cầu GET tới /products
-
 });
 
 app.get('/', (req, res) => {
