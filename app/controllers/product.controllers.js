@@ -1,39 +1,40 @@
+const { json } = require('sequelize');
 const { getList, getDetail, addProduct_, updateproduct_, deleteProduct_} = require('../services/product.services');
 
 const getProductList = async (req, res) => {
-    const studentList = await getList();
-    if (!studentList) {
+    const productList = await getList();
+    if (!productList) {
         return res.status(404).send('Not found');
     }
-    res.status(200).send(studentList);
+    res.status(200).send(productList);
 };
 
 const getProductById = async (req, res) => {
     const { id } = req.params;
-    const student = await getDetail(id);
-    if (!student) {
+    const product = await getDetail(id);
+    if (!product) {
         res.status(404).send('Product not found');
     }
     else
-        res.status(200).send(student);
+        res.status(200).send(product);
 }
 
 const addProduct = async (req, res) => {
-    let student = req.body;
-    const newStudent = await addProduct_(student);
-    res.status(201).send(newStudent);
+    let product = req.body;
+    const newProduct = await addProduct_(product);
+    res.status(201).send(newProduct);
 }
 
 const updateProduct = async (req, res) => {
     const { id } = req.params;
-    const student = req.body;
-    const newStudent = await updateproduct_(id, student);
+    const product = req.body;
+    const newProduct = await updateproduct_(id, product);
 
-    if (!newStudent) {
+    if (!newProduct) {
         res.status(404).send('Product not found');
     }
     else
-        res.status(200).send(newStudent);
+        res.status(200).send(newProduct);
 }
 
 const deleteProduct = async (req, res) => {
