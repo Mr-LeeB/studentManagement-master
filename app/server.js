@@ -17,7 +17,9 @@ app.use(router);
 
 
 app.use(cors({
-    credentials: true
+    origin: '*',
+    methods: 'POST, PUT, PATCH, GET, DELETE, OPTIONS',
+    headers: '*'
   }));
 
 app.get('/products', (req, res) => {
