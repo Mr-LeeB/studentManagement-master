@@ -24,7 +24,7 @@ const createProductModel = (sequelize) => {
     },
         {
             tableName: 'products', // tên bảng (có thể có hoặc không)
-            timestamps: true, // có ngày tạo và ngày update
+            timestamps: false, // có ngày tạo và ngày update
         }
     )
 }
