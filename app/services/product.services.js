@@ -22,6 +22,18 @@ const getDetail = async (id) => {
     return false;
 }
 
+const getProductByCategory_ = async (category) => {
+    const productList = await Product.findAll({
+        where: {
+            category,
+        }
+    });
+    if (productList) {
+        return productList;
+    }
+    return false;
+}
+
 const addProduct_ = async (product) => {
     const newproduct = await Product.create(product);
     return newproduct;
@@ -57,7 +69,7 @@ const deleteProduct_ = async (id) => {
 }
 
 module.exports = {
-    getList, getDetail, addProduct_, updateproduct_, deleteProduct_,
+    getList, getDetail, addProduct_, updateproduct_, deleteProduct_, getProductByCategory_
 }
 
 

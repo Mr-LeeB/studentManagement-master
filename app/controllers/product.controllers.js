@@ -1,5 +1,5 @@
 const { json } = require('sequelize');
-const { getList, getDetail, addProduct_, updateproduct_, deleteProduct_} = require('../services/product.services');
+const { getList, getDetail, addProduct_, getProductByCategory_, updateproduct_, deleteProduct_ } = require('../services/product.services');
 
 const getProductList = async (req, res) => {
     const productList = await getList();
@@ -34,6 +34,16 @@ const getProductById = async (req, res) => {
         res.status(200).send(product);
 }
 
+const getProductByCategory = async (req, res) => {
+    const { category } = req.params;
+    const productList = await getProductByCategory_(category);
+    if (!productList) {
+        res.status(404).send('Product not found');
+    }
+    else
+        res.status(200).send(productList);
+}
+
 const addProduct = async (req, res) => {
     let product = req.body;
     const newProduct = await addProduct_(product);
@@ -63,5 +73,5 @@ const deleteProduct = async (req, res) => {
 }
 
 module.exports = {
-    getProductList, getProductById, addProduct, updateProduct, deleteProduct,
+    getProductList, getProductById, getProductByCategory, addProduct, updateProduct, deleteProduct,
 }
