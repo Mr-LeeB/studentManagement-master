@@ -18,6 +18,7 @@ const getProductList = async (req, res) => {
             image2: product.image2,
             image3: product.image3,
             image4: product.image4,
+            category: product.category,
         }
     })
     res.status(200).send(data);

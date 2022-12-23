@@ -23,9 +23,7 @@ const getDetail = async (id) => {
 }
 
 const addProduct_ = async (product) => {
-
     const newproduct = await Product.create(product);
-
     return newproduct;
 }
 
@@ -41,6 +39,7 @@ const updateproduct_ = async (id, product) => {
         productUpdate.image2 = product.image2;
         productUpdate.image3 = product.image3;
         productUpdate.image4 = product.image4;
+        productUpdate.category = product.category;
         const productUpdated = await productUpdate.save();
         return productUpdated;
     }

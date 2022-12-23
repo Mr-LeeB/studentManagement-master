@@ -36,6 +36,10 @@ const createProductModel = (sequelize) => {
         image4: {
             type: DataTypes.TEXT,
             allowNull: false
+        },
+        category: {
+            type: DataTypes.STRING,
+            allowNull: false
         }
     },
         {
