@@ -37,6 +37,10 @@ const updateproduct_ = async (id, product) => {
         productUpdate.rating = product.rating;
         productUpdate.sale = product.sale;
         productUpdate.price = product.price;
+        productUpdate.image1 = product.image1;
+        productUpdate.image2 = product.image2;
+        productUpdate.image3 = product.image3;
+        productUpdate.image4 = product.image4;
         const productUpdated = await productUpdate.save();
         return productUpdated;
     }

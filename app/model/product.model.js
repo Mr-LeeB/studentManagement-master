@@ -20,6 +20,22 @@ const createProductModel = (sequelize) => {
         price: {
             type: DataTypes.INTEGER,
             allowNull: false
+        },
+        image1: {
+            type: DataTypes.TEXT,
+            allowNull: false
+        },
+        image2: {
+            type: DataTypes.TEXT,
+            allowNull: false
+        },
+        image3: {
+            type: DataTypes.TEXT,
+            allowNull: false
+        },
+        image4: {
+            type: DataTypes.TEXT,
+            allowNull: false
         }
     },
         {
